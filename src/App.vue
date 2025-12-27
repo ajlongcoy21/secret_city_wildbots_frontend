@@ -5,6 +5,10 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
+    <i class="pi pi-check"></i>
+    <div class="card flex justify-center">
+        <Button label="Verify" />
+    </div>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
