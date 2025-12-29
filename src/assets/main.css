@@ -3,19 +3,14 @@
 @import "tailwindcss";
 @import "tailwindcss-primeui";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+@theme {
+  --color-team-pink: #FF029C;
+  --color-team-blue: #478ECC;
+  --color-team-green: #78FD09;
+  --color-team-yellow: #F7EC0F;
+  --color-team-black: #000000;
+  --color-team-gray: #262626;
+  --color-team-white: #FFFFFF;
 }
 
 @media (hover: hover) {
@@ -33,6 +28,5 @@ a,
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }

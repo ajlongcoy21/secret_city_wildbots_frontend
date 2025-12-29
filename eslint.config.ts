@@ -17,4 +17,11 @@ export default defineConfigWithVueTs(
 
   ...pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
+  {
+    rules: {
+      'no-unused-vars': 'off', // Turn off the base JS rule
+      '@typescript-eslint/no-unused-vars': 'off', // Turn off the TS specific rule
+      'vue/multi-word-component-names': 'off' // Allow single-word component names
+    }
+  }
 )
