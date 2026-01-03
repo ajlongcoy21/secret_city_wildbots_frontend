@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.fixed.top-0.left-0.right-0.z-50.h-16.bg-team-black.flex.items-center.px-4
+  header.bg-team-black.flex.items-center.p-2
     <!-- LEFT -->
     .flex.items-center.gap-3
       <!-- Sidebar Toggle -->
@@ -17,16 +17,16 @@
       slot(name="title")
 
     <!-- RIGHT -->
-    .flex.items-center.gap-3
-      <!-- User Menu -->
-      Button(icon="pi pi-user" text rounded aria-label="User Menu" @click="toggleUserMenu")
+    //- .flex.items-center.gap-3
+    //-   <!-- User Menu -->
+    //-   Button(icon="pi pi-user" text rounded aria-label="User Menu" @click="toggleUserMenu")
 
-      Menu(ref="userMenu" :model="menuItems" popup)
+    //-   Menu(ref="userMenu" :model="menuItems" popup)
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useLayoutStore } from '@/stores/layouts/topbar'
+import { useLayoutStore } from '@/stores/topbar'
 import Button from 'primevue/button'
 import Menu from 'primevue/menu'
 

@@ -2,6 +2,29 @@
 :root {
   --color-primary: #FFFFFF;
   --background-color-background: #000000;
+  --color-team-pink: #FF029C;
+  --color-team-blue: #478ECC;
+  --color-team-green: #78FD09;
+  --color-team-yellow: #F7EC0F;
+  --color-team-black: #000000;
+  --color-team-gray: #262626;
+
+  /* Pagination Color Scheme */
+  --p-paginator-background: var(--background-color-background);
+  --p-paginator-nav-button-color: var(--color-team-yellow);
+  --p-paginator-current-page-report-color: var(--color-team-yellow);
+
+  /* Button Color Scheme */
+  --p-button-primary-background: var(--color-team-yellow);
+  --p-button-primary-border-color: var(--color-team-yellow);
+  --p-button-primary-hover-background: var(--color-team-blue);
+  --p-button-primary-hover-border-color: var(--color-team-blue);
+
+  /* InputText Color Scheme */
+  --p-inputtext-border-color: var(--color-team-yellow);
+  --p-inputtext-focus-border-color: var(--color-team-blue);
+  --p-inputtext-hover-border-color: var(--color-team-blue);
+
 }
 
 *::before,

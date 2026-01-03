@@ -13,6 +13,9 @@ module.exports = {
         text: {
           primary: 'var(--text-color-primary)'
         }
+      },
+      boxShadow: {
+        'team-yellow': '0 8px 15px rgba(247, 235, 15, 0.5)',
       }
     }
   },

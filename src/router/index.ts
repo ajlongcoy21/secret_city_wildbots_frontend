@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Topbar from '@/layouts/topbar/Topbar.vue'
 
 // Import Views
-import HomeView from '../views/HomeView.vue'
+import TeamView from '../views/TeamView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       components: {
-        default: HomeView,
+        default: TeamView,
         Topbar: Topbar
       },
     },

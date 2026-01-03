@@ -1,10 +1,10 @@
 <template lang="pug">
-  // Fixed Topbar rendered elsewhere
-  RouterView(name="Topbar")
+  div.flex.flex-col.min-h-screen
+    RouterView(name="Topbar")
 
-  // Main content
-  main.bg-team-gray.pt-16.min-h-screen.w-screen
-    RouterView
+    // Main content
+    main.flex.flex-1.w-full.bg-team-gray
+      RouterView
 </template>
 
 <script setup lang="ts">

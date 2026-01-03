@@ -4,29 +4,17 @@
 @import "tailwindcss-primeui";
 
 @theme {
-  --color-team-pink: #FF029C;
-  --color-team-blue: #478ECC;
-  --color-team-green: #78FD09;
-  --color-team-yellow: #F7EC0F;
-  --color-team-black: #000000;
-  --color-team-gray: #262626;
-  --color-team-white: #FFFFFF;
+  --color-team-pink: var(--color-team-pink);
+  --color-team-blue: var(--color-team-blue);
+  --color-team-green: var(--color-team-green);
+  --color-team-yellow: var(--color-team-yellow);
+  --color-team-black: var(--color-team-black);
+  --color-team-gray: var(--color-team-gray);
+  --color-team-white: var(--color-primary);
 }
 
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
 }

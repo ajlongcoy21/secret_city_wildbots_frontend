@@ -1,10 +1,10 @@
 <template lang="pug">
-  main
+  div.flex.flex-1.w-full
     TheWelcome
 </template>
 
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import TheWelcome from '../components/TeamsList.vue'
 </script>
 
 <style scoped>
