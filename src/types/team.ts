@@ -1,5 +1,5 @@
 export interface Team {
-  teamNumber: number | null
+  teamNumber: number
   nameFull: string | null
   nameShort: string | null
   city: string | null

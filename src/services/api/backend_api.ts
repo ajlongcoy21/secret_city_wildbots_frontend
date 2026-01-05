@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const backend_api = axios.create({
-  baseURL: 'http://localhost:8000',
-  timeout: 5000,
+  baseURL: 'https://secret-city-wildbots-backend-279e301af02c.herokuapp.com',
+  timeout: 15000,
   headers: {
     'Content-Type': 'application/json'
   }

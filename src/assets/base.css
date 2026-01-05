@@ -15,15 +15,15 @@
   --p-paginator-current-page-report-color: var(--color-team-yellow);
 
   /* Button Color Scheme */
-  --p-button-primary-background: var(--color-team-yellow);
-  --p-button-primary-border-color: var(--color-team-yellow);
-  --p-button-primary-hover-background: var(--color-team-blue);
-  --p-button-primary-hover-border-color: var(--color-team-blue);
+  --p-button-primary-background: var(--color-team-blue);
+  --p-button-primary-border-color: var(--color-team-blue);
+  --p-button-primary-hover-background: var(--color-team-yellow);
+  --p-button-primary-hover-border-color: var(--color-team-yellow);
 
   /* InputText Color Scheme */
-  --p-inputtext-border-color: var(--color-team-yellow);
-  --p-inputtext-focus-border-color: var(--color-team-blue);
-  --p-inputtext-hover-border-color: var(--color-team-blue);
+  --p-inputtext-border-color: var(--color-team-blue);
+  --p-inputtext-focus-border-color: var(--color-team-yellow);
+  --p-inputtext-hover-border-color: var(--color-team-yellow);
 
 }
 

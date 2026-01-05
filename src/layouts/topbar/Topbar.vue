@@ -1,7 +1,7 @@
 <template lang="pug">
   header.bg-team-black.flex.items-center.p-2
     <!-- LEFT -->
-    .flex.items-center.gap-3
+    .flex.items-center.gap-3.cursor-pointer(@click="router.push({ name: 'home' })")
       <!-- Sidebar Toggle -->
       //Button(icon="pi pi-bars" text rounded aria-label="Toggle Sidebar" @click="layoutStore.toggleSidebar")
 
@@ -13,11 +13,22 @@
         span.text-team-green WILDBOTS&nbsp
 
     <!-- CENTER (optional page title slot later) -->
-    .flex-1.px-6
+    .flex-1.flex.items-center.justify-center.px-6
       slot(name="title")
+        div.text-2xl(v-if="timeLeft" class="text-center")
+          span.text-team-yellow SEASON STARTS IN:&nbsp
+          span.text-team-yellow
+            | {{ timeLeft.days }}d
+            | {{ timeLeft.hours }}h
+            | {{ timeLeft.minutes }}m
+            | {{ timeLeft.seconds }}s
+
+        div(v-else)
+          p.text-2xl.text-team-green SEASON HAS STARTED!
 
     <!-- RIGHT -->
-    //- .flex.items-center.gap-3
+    .flex.items-center.gap-3
+      Button(type="button" icon="pi pi-users" label="Teams" @click="router.push({ name: 'teams' })")
     //-   <!-- User Menu -->
     //-   Button(icon="pi pi-user" text rounded aria-label="User Menu" @click="toggleUserMenu")
 
@@ -25,23 +36,40 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useLayoutStore } from '@/stores/topbar'
-import Button from 'primevue/button'
-import Menu from 'primevue/menu'
 
-const layoutStore = useLayoutStore()
+import { useRouter } from 'vue-router'
 
-const userMenu = ref()
+const router = useRouter()
 
-const menuItems = [
-  { label: 'Profile', icon: 'pi pi-user' },
-  { label: 'Settings', icon: 'pi pi-cog' },
-  { separator: true },
-  { label: 'Logout', icon: 'pi pi-sign-out' }
-]
+const kickoffDate = new Date('2026-01-10T12:00:00')
 
-const toggleUserMenu = (event: Event) => {
-  userMenu.value.toggle(event)
-}
+const now = ref(Date.now())
+let timer: number
+
+onMounted(() => {
+  timer = window.setInterval(() => {
+    now.value = Date.now()
+  }, 1000)
+})
+
+onUnmounted(() => {
+  clearInterval(timer)
+})
+
+const timeLeft = computed(() => {
+  const diff = kickoffDate.getTime() - now.value
+
+  if (diff <= 0) {
+    return null
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+  const minutes = Math.floor((diff / (1000 * 60)) % 60)
+  const seconds = Math.floor((diff / 1000) % 60)
+
+  return { days, hours, minutes, seconds }
+})
 </script>

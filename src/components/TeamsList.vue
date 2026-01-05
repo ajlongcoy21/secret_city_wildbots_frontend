@@ -22,7 +22,7 @@ div.flex.flex-col.w-full
                 Skeleton(width="4rem" height="2rem")
                 Skeleton(width="4rem" height="2rem")
     template(v-else)
-      Card.m-5.bg-team-black.shadow-lg.rounded-lg.shadow-team-yellow(v-for="team in teamsStore.teams" style="width: 25rem; overflow: hidden" class="hover:shadow-xl transition-shadow duration-300")
+      Card.m-5.bg-team-black.shadow-lg.rounded-lg.shadow-team-yellow(v-for="(team, index) in teamsStore.teams" style="width: 25rem; overflow: hidden" class="hover:shadow-xl transition-shadow duration-300")
         template(#title)
           span.text-team-pink Team {{ team.teamNumber }} - {{ team.nameShort }}
         template(#subtitle)
@@ -43,17 +43,18 @@ div.flex.flex-col.w-full
             span.text-team-yellow {{ team.rookieYear }}
         template(#footer)
           div.flex.gap-4.mt-1
-            //- Button(label="Cancel" severity="secondary" variant="outlined" class="w-full")
-            //- Button(label="Save" class="w-full")
+            Button.w-full(label="View Team Events" @click="fetchTeamEvents(index)")
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useTeamsStore } from '@/stores/teams'
+import { useEventsStore } from '@/stores/events'
 
 import type { PageState } from 'primevue/paginator'
 
 const teamsStore = useTeamsStore()
+const eventsStore = useEventsStore()
 
 const teamNumber = ref('')
 
@@ -67,6 +68,14 @@ function onPage(event: PageState) {
 
 function fetchTeam() {
   teamsStore.fetchTeam(teamNumber.value)
+}
+
+function fetchTeamEvents(index: number) {
+  if (teamsStore.teams[index]?.teamNumber == null) {
+    return
+  } else {
+    eventsStore.fetchTeamEvents(teamsStore.teams[index]?.teamNumber.toString())
+  }
 }
 
 onMounted(() => {

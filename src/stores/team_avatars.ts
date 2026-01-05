@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
 import backend_api from '@/services/api/backend_api'
-import type { Team, TeamsResponse } from '@/types/team'
+import type { Avatar, TeamsAvatarResponse } from '@/types/avatar'
 
-export const useTeamsStore = defineStore('teams', {
+export const useTeamsAvatarStore = defineStore('teams-avatar', {
   state: () => ({
-    teams: [] as Team[],
+    avatars: [] as Avatar[],
 
     // Constants
     teamCountPageMax: 65,
@@ -25,16 +25,16 @@ export const useTeamsStore = defineStore('teams', {
   },
 
   actions: {
-    async fetchTeams(page = 1) {
+    async fetchTeamAvatars(page = 1) {
       this.loading = true
       this.error = null
 
       try {
-        const data = await backend_api.post<TeamsResponse, TeamsResponse>('/proxy', {
+        const data = await backend_api.post<TeamsAvatarResponse, TeamsAvatarResponse>('/proxy', {
           endpoint: "2026/teams?page=" + page
         })
 
-        this.teams = data.teams
+        this.avatars = data.teams // The api response returns teams
         this.teamCountTotal = data.teamCountTotal
         this.teamCountPage = data.teamCountPage
         this.pageCurrent = data.pageCurrent
@@ -49,20 +49,38 @@ export const useTeamsStore = defineStore('teams', {
         this.loading = false
       }
     },
-    async fetchTeam(teamNumber = '1') {
+    async fetchTeamAvatar(teamNumber = 1) {
       this.loading = true
       this.error = null
 
       try {
-        const data = await backend_api.post<TeamsResponse, TeamsResponse>('/proxy', {
-          endpoint: "2026/teams?teamNumber=" + teamNumber
+        const data = await backend_api.post<TeamsAvatarResponse, TeamsAvatarResponse>('/proxy', {
+          endpoint: "2026/avatars?teamNumber=" + teamNumber
         })
-
-        this.teams = data.teams
+        this.avatars = data.teams // The api response returns teams
         this.teamCountTotal = data.teamCountTotal
         this.teamCountPage = data.teamCountPage
         this.pageCurrent = data.pageCurrent
         this.pageTotal = data.pageTotal
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          this.error = err.message
+        } else {
+          this.error = 'Unknown error'
+        }
+      } finally {
+        this.loading = false
+      }
+    },
+    async getTeamAvatar(teamNumber = 1) {
+      this.loading = true
+      this.error = null
+
+      try {
+        const data = await backend_api.post<TeamsAvatarResponse, TeamsAvatarResponse>('/proxy', {
+          endpoint: "2026/avatars?teamNumber=" + teamNumber
+        })
+        console.log(data.teams[0]?.encodedAvatar)
       } catch (err: unknown) {
         if (err instanceof Error) {
           this.error = err.message

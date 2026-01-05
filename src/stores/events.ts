@@ -1,0 +1,43 @@
+import { defineStore } from 'pinia'
+import backend_api from '@/services/api/backend_api'
+import type { Event, EventsResponse } from '@/types/team_event'
+
+export const useEventsStore = defineStore('events', {
+  state: () => ({
+    Events: [] as Event[],
+
+    // eventTotal
+    eventCount: 0,
+
+    // ui state
+    loading: false,
+    error: null as string | null
+  }),
+
+  getters: {},
+
+  actions: {
+    async fetchTeamEvents(teamNumber = '1') {
+      this.loading = true
+      this.error = null
+
+      try {
+        const data = await backend_api.post<EventsResponse, EventsResponse>('/proxy', {
+          endpoint: "2026/events?teamNumber=" + teamNumber
+        })
+
+        this.Events = data.Events
+        this.eventCount = data.eventCount
+
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          this.error = err.message
+        } else {
+          this.error = 'Unknown error'
+        }
+      } finally {
+        this.loading = false
+      }
+    }
+  }
+})
