@@ -16,8 +16,8 @@
     .flex-1.flex.items-center.justify-center.px-6
       slot(name="title")
         div.m-4(v-if="timeLeft" class="text-center")
-          span.text-team-yellow.text-lg(class="lg:text-2xl") SEASON KICKOFF IN:&nbsp
-          span.text-team-yellow.text-lg(class="lg:text-2xl")
+          span.text-team-yellow.text-sm(class="lg:text-2xl") SEASON KICKOFF IN:&nbsp
+          span.text-team-yellow.text-sm(class="lg:text-2xl")
             | {{ timeLeft.days }}d
             | {{ timeLeft.hours }}h
             | {{ timeLeft.minutes }}m
