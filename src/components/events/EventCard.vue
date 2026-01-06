@@ -8,19 +8,19 @@ Card.m-5.bg-team-black.shadow-lg.rounded-lg.shadow-team-yellow(style="width: 25r
     div.m-4(class="grid grid-cols-[auto_auto_1fr] gap-x-2 gap-y-1")
       span.font-semibold.text-right.text-team-green Week
       span :
-      span.text-team-yellow {{ frc_event.weekNumber }}
+      span.text-team-yellow.min-w-0.break-words.whitespace-normal {{ frc_event.weekNumber }}
       span.font-semibold.text-right.text-team-green Date
       span :
-      span.text-team-yellow {{ formatEventDateRange(frc_event.dateStart, frc_event.dateEnd) }}
+      span.text-team-yellow.min-w-0.break-words.whitespace-normal {{ formatEventDateRange(frc_event.dateStart, frc_event.dateEnd) }}
       span.font-semibold.text-right.text-team-green Venue
       span :
-      span.text-team-yellow {{ frc_event.venue }}
+      span.text-team-yellow.min-w-0.break-words.whitespace-normal {{ frc_event.venue }}
       span.font-semibold.text-right.text-team-green Address
       span :
-      span.text-team-yellow {{ frc_event.address }}
+      span.text-team-yellow.min-w-0.break-words.whitespace-normal {{ frc_event.address }}
       span.font-semibold.text-right.text-team-green Website
       span :
-      a.text-team-yellow(:href="frc_event.website" target="_blank") {{ frc_event.website }}
+      a.text-team-yellow.min-w-0.whitespace-normal(:href="frc_event.website" target="_blank") {{ frc_event.website }}
   template(#footer)
     div.flex.gap-4.mt-1
 </template>
