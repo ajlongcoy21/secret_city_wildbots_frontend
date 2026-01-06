@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.bg-team-black.flex.flex-wrap.items-center.p-2
+  header.bg-team-black.flex.flex-wrap.items-center.p-2.justify-center(class="sm:justify-start")
     <!-- LEFT -->
     .flex.items-center.gap-3.cursor-pointer(@click="router.push({ name: 'home' })")
       <!-- Sidebar Toggle -->
@@ -13,7 +13,7 @@
         span.text-team-green WILDBOTS&nbsp
 
     <!-- CENTER (optional page title slot later) -->
-    .flex-1.flex.items-center.justify-center.px-6
+    .flex-1.flex.items-center.justify-center.px-6.hidden(class="lg:inline")
       slot(name="title")
         div.text-2xl(v-if="timeLeft" class="text-center")
           span.text-team-yellow SEASON STARTS IN:&nbsp
