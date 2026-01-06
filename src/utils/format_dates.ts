@@ -21,7 +21,7 @@ export function formatEventDateRange(start: string, end: string): string {
   } else if (daysFromNow === 1) {
     daysText = '(Tomorrow)'
   } else if (daysFromNow > 1) {
-    daysText = `(${daysFromNow} days from now)`
+    daysText = `(${daysFromNow} days)`
   } else if (daysFromNow < 0) {
     daysText = `(${Math.abs(daysFromNow)} day${Math.abs(daysFromNow) > 1 ? 's' : ''} ago)`
   }
