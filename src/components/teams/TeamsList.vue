@@ -1,11 +1,12 @@
 <template lang="pug">
 div.flex.flex-col.w-full
-  Paginator.w-full.p-4(
+  Paginator.w-full.p-4.text-xs(
     :rows="teamsStore.teamCountPageMax"
     :totalRecords="teamsStore.teamCountTotal"
     template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords}"
     @page="onPage"
+    class="lg:text-lg"
   )
     template(#end)
       div(class="!justify-center sm:!justify-end w-full flex")

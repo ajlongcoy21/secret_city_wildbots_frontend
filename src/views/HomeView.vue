@@ -2,7 +2,7 @@
   div.flex.flex-col.w-full
     div.flex.flex-col.flex-wrap.w-full.items-center.justify-center.bg-team-gray
       Image.m-15(:src="FIRSTLogo" alt="Image" width="300")
-      Image(:src="FIRSTAgeLogo" alt="Image" width="300")
+      Image.mb-15(:src="FIRSTAgeLogo" alt="Image" width="300")
 </template>
 
 <script setup lang="ts">

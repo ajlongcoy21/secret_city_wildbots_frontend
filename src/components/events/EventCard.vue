@@ -5,7 +5,7 @@ Card.m-5.bg-team-black.shadow-lg.rounded-lg.shadow-team-yellow(style="width: 25r
   template(#subtitle)
     span.text-team-blue {{ formatLocation(frc_event.city, frc_event.stateprov, frc_event.country) }}
   template(#content)
-    div(class="grid grid-cols-[auto_auto_1fr] gap-x-2 gap-y-1")
+    div.m-4(class="grid grid-cols-[auto_auto_1fr] gap-x-2 gap-y-1")
       span.font-semibold.text-right.text-team-green Week
       span :
       span.text-team-yellow {{ frc_event.weekNumber }}
