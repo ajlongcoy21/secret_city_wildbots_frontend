@@ -16,7 +16,7 @@
     .flex-1.flex.items-center.justify-center.px-6.hidden(class="lg:inline")
       slot(name="title")
         div.text-2xl(v-if="timeLeft" class="text-center")
-          span.text-team-yellow SEASON STARTS IN:&nbsp
+          span.text-team-yellow SEASON KICKOFF IN:&nbsp
           span.text-team-yellow
             | {{ timeLeft.days }}d
             | {{ timeLeft.hours }}h
