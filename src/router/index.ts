@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // Import Layouts
 import Topbar from '@/layouts/topbar/Topbar.vue'
@@ -9,7 +9,7 @@ import TeamView from '../views/TeamView.vue'
 import EventView from '../views/EventView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
