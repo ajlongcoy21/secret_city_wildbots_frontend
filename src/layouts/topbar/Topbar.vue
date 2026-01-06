@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.bg-team-black.flex.flex-wrap.items-center.p-2.justify-center(class="sm:justify-start")
+  header.bg-team-black.flex.flex-col.items-center.p-2.justify-center(class="sm:flex-row sm:justify-start")
     <!-- LEFT -->
     .flex.items-center.gap-3.cursor-pointer(@click="router.push({ name: 'home' })")
       <!-- Sidebar Toggle -->
@@ -13,11 +13,11 @@
         span.text-team-green WILDBOTS&nbsp
 
     <!-- CENTER (optional page title slot later) -->
-    .flex-1.flex.items-center.justify-center.px-6.hidden(class="lg:inline")
+    .flex-1.flex.items-center.justify-center.px-6
       slot(name="title")
-        div.text-2xl(v-if="timeLeft" class="text-center")
-          span.text-team-yellow SEASON KICKOFF IN:&nbsp
-          span.text-team-yellow
+        div.m-4(v-if="timeLeft" class="text-center")
+          span.text-team-yellow.text-lg(class="lg:text-2xl") SEASON KICKOFF IN:&nbsp
+          span.text-team-yellow.text-lg(class="lg:text-2xl")
             | {{ timeLeft.days }}d
             | {{ timeLeft.hours }}h
             | {{ timeLeft.minutes }}m
