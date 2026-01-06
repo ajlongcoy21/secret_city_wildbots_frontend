@@ -6,7 +6,7 @@
       //Button(icon="pi pi-bars" text rounded aria-label="Toggle Sidebar" @click="layoutStore.toggleSidebar")
 
       <!-- Logo / App Name -->
-      Image(src="/img/icons/4265_192_192.png" alt="Image" width="60")
+      Image(:src="`${import.meta.env.BASE_URL}img/icons/4265_192_192.png`" alt="Image" width="60")
       span.text-xl.font-semibold
         span.text-team-pink SECRET&nbsp
         span.text-team-blue CITY&nbsp
