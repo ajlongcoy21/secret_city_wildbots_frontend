@@ -6,6 +6,7 @@ import Topbar from '@/layouts/topbar/Topbar.vue'
 // Import Views
 import HomeView from '../views/HomeView.vue'
 import TeamView from '../views/TeamView.vue'
+import EventView from '../views/EventView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,23 @@ const router = createRouter({
       name: 'teams',
       components: {
         default: TeamView,
+        Topbar: Topbar
+      },
+    },
+    {
+      path: '/team/:teamNumber/events',
+      name: 'teamEvents',
+      components: {
+        default: EventView,
+        Topbar: Topbar
+      },
+      props: true // pass teamNumber as prop
+    },
+    {
+      path: '/events',
+      name: 'events',
+      components: {
+        default: EventView,
         Topbar: Topbar
       },
     },

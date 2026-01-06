@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.bg-team-black.flex.items-center.p-2
+  header.bg-team-black.flex.flex-wrap.items-center.p-2
     <!-- LEFT -->
     .flex.items-center.gap-3.cursor-pointer(@click="router.push({ name: 'home' })")
       <!-- Sidebar Toggle -->
@@ -29,6 +29,7 @@
     <!-- RIGHT -->
     .flex.items-center.gap-3
       Button(type="button" icon="pi pi-users" label="Teams" @click="router.push({ name: 'teams' })")
+      Button(type="button" icon="pi pi-calendar-clock" label="Events" @click="router.push({ name: 'events' })")
     //-   <!-- User Menu -->
     //-   Button(icon="pi pi-user" text rounded aria-label="User Menu" @click="toggleUserMenu")
 

@@ -80,7 +80,6 @@ export const useTeamsAvatarStore = defineStore('teams-avatar', {
         const data = await backend_api.post<TeamsAvatarResponse, TeamsAvatarResponse>('/proxy', {
           endpoint: "2026/avatars?teamNumber=" + teamNumber
         })
-        console.log(data.teams[0]?.encodedAvatar)
       } catch (err: unknown) {
         if (err instanceof Error) {
           this.error = err.message

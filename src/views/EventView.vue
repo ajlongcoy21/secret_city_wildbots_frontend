@@ -1,10 +1,10 @@
 <template lang="pug">
   div.flex.flex-1.w-full
-    TeamList
+    EventList
 </template>
 
 <script setup lang="ts">
-import TeamList from '../components/teams/TeamsList.vue'
+import EventList from '../components/events/EventsList.vue'
 </script>
 
 <style scoped>

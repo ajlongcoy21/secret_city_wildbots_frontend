@@ -13,6 +13,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
     Card: typeof import('primevue/card')['default']
+    EventCard: typeof import('./src/components/events/EventCard.vue')['default']
+    EventsList: typeof import('./src/components/events/EventsList.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
@@ -27,7 +29,8 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Skeleton: typeof import('primevue/skeleton')['default']
-    TeamsList: typeof import('./src/components/TeamsList.vue')['default']
+    TeamCard: typeof import('./src/components/teams/TeamCard.vue')['default']
+    TeamsList: typeof import('./src/components/teams/TeamsList.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
   }
 }

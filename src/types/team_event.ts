@@ -11,10 +11,10 @@ export interface Event {
   city: string | null,
   stateprov: string | null,
   country: string | null,
-  dateStart: string | null,
-  dateEnd: string | null,
+  dateStart: string,
+  dateEnd: string,
   address: string | null,
-  website: string | null,
+  website: string,
   webcasts: string[] | null,
   timezone: string | null
 }
