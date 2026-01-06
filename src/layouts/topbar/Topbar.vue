@@ -6,7 +6,7 @@
       //Button(icon="pi pi-bars" text rounded aria-label="Toggle Sidebar" @click="layoutStore.toggleSidebar")
 
       <!-- Logo / App Name -->
-      Image(:src="`${import.meta.env.BASE_URL}img/icons/4265_192_192.png`" alt="Image" width="60")
+      Image(:src="logoPath" alt="Image" width="60")
       span.text-xl.font-semibold
         span.text-team-pink SECRET&nbsp
         span.text-team-blue CITY&nbsp
@@ -43,6 +43,8 @@ import { useLayoutStore } from '@/stores/topbar'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+
+const logoPath = `${import.meta.env.BASE_URL}img/icons/4265_192_192.png`
 
 const kickoffDate = new Date('2026-01-10T12:00:00')
 
